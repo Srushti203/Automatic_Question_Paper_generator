@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add Question</title>
+<link rel="stylesheet" href="static\add_question.css">
+
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <!-- Navigation Bar -->
+<nav style="display: flex; align-items: center; justify-content: space-between; background-color: #5f99f0;  padding: 10px;">
+    <div style="color: white; font-weight: bold;">
+        
+    </div>
+    <div>
+        <a href="add_question" style="color: rgb(26, 26, 26);font-weight: bold; text-decoration: none; margin-right: 44px;">Home</a>
+        <a href="show_questions" style="color: rgb(14, 14, 14); font-weight: bold;text-decoration: none; margin-right: 40px;">Show Questions</a>
+        <a href="/logout" style="color: rgb(8, 8, 8);font-weight: bold; text-decoration: none;">Logout</a>
+    </div>
+</nav>
+
+
+    <!-- Main Content -->
+    <main>
+        <div class="form-container">
+            <h1>Add Question</h1>
+            <form method="POST">
+                <label for="question_text">Your Question:</label><br>
+                <textarea name="question_text" rows="4" required></textarea><br>
+                
+                <label for="difficulty">Difficulty Level:</label><br>
+                <select name="difficulty" required>
+                    <option value="" disabled selected>Select Difficulty</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select><br>
+                
+                <label for="module">Module:</label><br>
+                <select name="module" required>
+                    <option value="" disabled selected>Select Module</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select><br>
+                
+                <label for="semester">Semester:</label><br>
+                <select name="semester" required>
+                    <option value="" disabled selected>Select Semester</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select><br>
+                
+                <label for="subject">Subject:</label><br>
+                <input type="text" name="subject" placeholder="Enter Subject Name" required><br>
+                
+                <label for="branch">Branch:</label><br>
+                <input type="text" name="branch" placeholder="Enter Branch Name" required><br>
+                
+                <button type="submit">Add Question</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+</html>
+
+{% endblock %}
+
+
+

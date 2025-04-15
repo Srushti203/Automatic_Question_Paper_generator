@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Questions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            display: flex;
+            justify-content: flex-end; /* Align links to the right */
+        }
+        nav a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        h1 {
+            color: #333;
+        }
+        ol {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="add_question">Home</a>
+        <a href="/show_questions">Show Questions</a>
+        <a href="/logout">Logout</a>
+    </nav>
+
+    <h1>Questions by Subject</h1>
+
+    {% for subject, questions in questions_by_subject.items() %}
+        <h3>Subject: {{ subject }}</h3>
+        <ol>
+        {% for question in questions %}
+            <li>{{ question[0] }} (Module: {{ question[1] }}, Difficulty: {{ question[2] }})</li>
+        {% endfor %}
+        </ol>
+    {% endfor %}
+
+</body>
+</html>
